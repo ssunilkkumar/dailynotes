@@ -37,7 +37,7 @@ This project is about taking notes
 ## screenshot
 
 
-<img src="assets/dailynotes.png" alt="Logo">
+<img src="assets/dailynotes.png" width=100% alt="Logo">
 <hr/>
 
 
