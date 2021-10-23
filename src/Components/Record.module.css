@@ -1,0 +1,41 @@
+.sidebar {
+    margin: 20px;
+    border: 1px solid rgb(252, 248, 248);
+    width: 25%;
+    border-radius:7px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sidebar > main > *{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.body main {
+    display: flex;
+    font-weight: bold;
+    gap: 5px;
+    justify-content: left;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.body input {
+    padding:10px;
+}
+.body button {
+    background-color: #f44336;
+    opacity: .8;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+.body button:hover {
+    opacity: 1;
+}

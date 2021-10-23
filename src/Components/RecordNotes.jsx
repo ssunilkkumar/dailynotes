@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import Moment from 'react-moment';
 import moment from 'moment'
 import { useDispatch } from 'react-redux';
 import {v4 as uuid} from "uuid"
 import { addNoteSuccess } from '../redux/todo/action';
-
-
+import styles from "./Record.module.css"
 
 export const RecordNotes = () => {
     const [date, setDate] = useState(new Date());
@@ -31,27 +29,38 @@ export const RecordNotes = () => {
     }
 
     return (
-        <div>
-            <Calendar
-                onChange={setDate}
-                value={date}
-                minDate={new Date()}
-            />
-            <div>{moment(date).format("Do MMM YYYY")}</div>
-            <Moment format="Do MMM YYYY">{date}</Moment> 
-            <input 
-                type="text" 
-                value={title} 
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Title"
-            />
-            <input 
-                type="text" 
-                value={body} 
-                onChange={(e) => setBody(e.target.value)}
-                placeholder="Body"
-            />
-            <input onClick={handleAdd} type="submit" value="Submit" />     
+        <div className={styles.sidebar}>
+            <main>
+                <h3>Select date from Calendar</h3>
+                <Calendar
+                    onChange={setDate}
+                    value={date}
+                    minDate={new Date()}
+                />
+            </main>
+            <div className={styles.body}>
+                <main>
+                    <div>Date: </div>
+                    <div>{moment(date).format("Do MMM YYYY")}</div>
+                </main>
+                <main>Title:</main>
+                <input 
+                    type="text" 
+                    value={title} 
+                    onChange={(e) => setTitle(e.target.value)}
+                    placeholder="Title"
+                />
+                <main>Content:</main>
+                <textarea 
+                    type="text" 
+                    value={body} 
+                    onChange={(e) => setBody(e.target.value)}
+                    placeholder="Body"
+                    rows="4" 
+                    cols="50"
+                />
+                <button onClick={handleAdd}>Submit</button>    
+            </div>     
         </div>
     )
 }
