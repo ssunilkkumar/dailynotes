@@ -28,7 +28,7 @@ This project is about taking notes
    ```
 2. Install NPM packages
    ```sh
-   npm install npm
+   npm install
    ```
 
 
