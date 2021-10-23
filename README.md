@@ -43,13 +43,10 @@ This project is about taking notes
 
 
 ## DEMO
-* signup then sign in(require email verification)
 
-* link [https://master.d38brrqxtnf511.amplifyapp.com/](https://master.d38brrqxtnf511.amplifyapp.com/)
-* click on Add to bag
-* click on Bag icon to check product in cart
-* Can remove from cart
-* Can Select size and quantity of product
+* link [https://notetaking-one.vercel.app/](https://notetaking-one.vercel.app/)
+* select and add title and content
+* All the notes are viewed in descending order of Date and timeStamp.
 
 
 
