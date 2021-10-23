@@ -20,12 +20,14 @@ export const RecordNotes = () => {
             id: uuid(),
             title: title,
             body: body,
-            date
+            date: moment(date).format("MM/DD/YYYY"),
+            time: moment(new Date()).format("h:mm:ss A")
         }
         const addAction= addNoteSuccess(payload)
         dispatch(addAction)
-        //setTitle("")
-        //setBody("")
+        setTitle("")
+        setBody("")
+        setDate(new Date())
     }
 
     return (

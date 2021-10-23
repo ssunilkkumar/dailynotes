@@ -1,26 +1,27 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
+import { Card } from './Card';
+import styles from "./View.module.css"
 
 
 export const Viewnotes = () => {
     const data = useSelector((state) => state.note)
-    
-    function handleOrder(data) {
-        const sorted = data.sort((a, b) => {
-            const aDate = new Date(a.date)
-            const bDate = new Date(b.date)
-            return bDate.getTime() - aDate.getTime()
-        })
-        console.log(sorted)
-    }
-
-    useEffect(() => {
-        handleOrder(data)
-    },[data])
 
     return (
-        <div>
-            
+        <div className={styles.view}>
+            <main>My Notes</main>
+            {
+                data
+                .sort((a, b) => {
+                    console.log(a.date, a.time, b.date, b.time)
+                    const aDate = new Date(a.date + ' ' + a.time)
+                    const bDate = new Date(b.date + ' ' + b.time)
+                    return bDate.getTime() - aDate.getTime()
+                })
+                .map(item => (
+                    <Card key={item.id} {...item} />
+                ))
+            }
         </div>
     )
 }

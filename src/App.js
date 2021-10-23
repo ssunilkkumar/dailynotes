@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
     <Navbar/>
-    <div>
+    <div className="flex">
          <RecordNotes/>
          <Viewnotes />
       </div>
